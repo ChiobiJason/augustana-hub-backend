@@ -42,13 +42,14 @@ This is **Version 1**, focused on core CRUD operations and filtering — no auth
 Example request body:
 ```json
 {
-  "fullName": "Chisom Chiobi",
+  "firstName": "Chisom",
+  "lastName": "Chiobi",
   "startYear": 2022,
   "course": "Computer Science",
+  "studentEmail": "chiobi@ualberta.ca",
   "countryOfBirth": "Nigeria",
   "ethnicity": "Igbo",
-  "gender": "Male",
-  "profileImageUrl": "https://example.com/image.jpg"
+  "gender": "Male"
 }
 ```
 
@@ -96,9 +97,11 @@ Returns: JSON array of students.
 ```
 Student {
   id               BIGSERIAL PRIMARY KEY
-  full_name        VARCHAR(100) NOT NULL
+  first_name       VARCHAR(100) NOT NULL
+  last_name        VARCHAR(100) NOT NULL
   start_year       INTEGER NOT NULL
-  course           VARCHAR(255) NOT NULL
+  course           VARCHAR(225) NOT NULL
+  student_email    VARCHAR(255) NOT NULL
   country_of_birth VARCHAR(100)
   ethnicity        VARCHAR(100)
   gender           VARCHAR(50)

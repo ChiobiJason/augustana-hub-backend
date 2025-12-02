@@ -24,6 +24,10 @@ public class Student {
 
     @Column(nullable = false, length = 225)
     private String course;
+
+    @Column(nullable = false)
+    private String studentEmail;
+
     private String countryOfBirth;
     private String ethnicity;
     private String gender;
@@ -38,20 +42,23 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String firstName, String lastName, Integer startYear, String course) {
+    public Student(Long id, String firstName, String lastName, Integer startYear, String course, String studentEmail,  LocalDateTime createdAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.startYear = startYear;
         this.course = course;
+        this.studentEmail = studentEmail;
+        this.createdAt = createdAt;
     }
 
-    public Student(Long id, String firstName, String lastName, Integer startYear, String course, String countryOfBirth, String ethnicity, String gender, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Student(Long id, String firstName, String lastName, Integer startYear, String course,  String studentEmail, String countryOfBirth, String ethnicity, String gender, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.startYear = startYear;
         this.course = course;
+        this.studentEmail = studentEmail;
         this.countryOfBirth = countryOfBirth;
         this.ethnicity = ethnicity;
         this.gender = gender;
@@ -104,6 +111,14 @@ public class Student {
         this.course = course;
     }
 
+    public String getStudentEmail() {
+        return studentEmail;
+    }
+
+    public void setStudentEmail() {
+        this.studentEmail = studentEmail;
+    }
+
     public String getCountryOfBirth() {
         return countryOfBirth;
     }
@@ -132,9 +147,9 @@ public class Student {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+//    public void setCreatedAt(LocalDateTime createdAt) {
+//        this.createdAt = createdAt;
+//    }
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
