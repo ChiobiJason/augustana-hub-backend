@@ -1,5 +1,7 @@
 package student;
 
+
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,10 +19,39 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    public Student addStudent(Student newStudent) {
+        studentRepository.save(newStudent);
+        return newStudent;
+    }
+
+    @Transactional
+    public void deleteStudent(String givenStudentEmail) {
+        studentRepository.deleteByStudentEmailIgnoreCase(givenStudentEmail);
+    }
+
+    public Student updateStudent(Student updatedStudent) {
+        Student studentToUpdate = studentRepository.findByStudentEmailIgnoreCase(
+                updatedStudent.getStudentEmail())
+                .orElseThrow(() -> new RuntimeException(
+                        "Student not found with email: " + updatedStudent.getStudentEmail()));
+
+        studentToUpdate.setFirstName(updatedStudent.getFirstName());
+        studentToUpdate.setLastName(updatedStudent.getLastName());
+        studentToUpdate.setStartYear((updatedStudent.getStartYear()));
+        studentToUpdate.setCourse((updatedStudent.getCourse()));
+        studentToUpdate.setCountry(updatedStudent.getCountry());
+        studentToUpdate.setEthnicity(updatedStudent.getEthnicity());
+        studentToUpdate.setGender(updatedStudent.getGender());
+
+        studentRepository.save(studentToUpdate);
+
+        return studentToUpdate;
+    }
+
     public Student getStudentById(Long givenId) {
         return studentRepository.findAll().stream()
                 .filter(student -> givenId.equals(student.getId()))
-                .collect(Collectors.toList()).get(0);
+                .toList().getFirst();
     }
 
     public List<Student> getStudentsByFirstName(String givenFirstName) {
@@ -43,7 +74,7 @@ public class StudentService {
                         student.getFullName().toLowerCase().contains(
                                 givenFullName.toLowerCase()
                         ))
-                .collect(Collectors.toList()).get(0);
+                .toList().getFirst();
     }
 
     public List<Student> getStudentsByStartYear(Integer givenStartYear) {
@@ -64,8 +95,8 @@ public class StudentService {
 
     public List<Student> getStudentsByCountryOfBirth(String givenCountryOfBirth) {
         return studentRepository.findAll().stream()
-                .filter(student -> student.getCountryOfBirth() != null &&
-                        student.getCountryOfBirth().toLowerCase().contains(
+                .filter(student -> student.getCountry() != null &&
+                        student.getCountry().toLowerCase().contains(
                                 givenCountryOfBirth.toLowerCase()
                         ))
                 .collect(Collectors.toList());

@@ -28,7 +28,7 @@ public class Student {
     @Column(nullable = false)
     private String studentEmail;
 
-    private String countryOfBirth;
+    private String country;
     private String ethnicity;
     private String gender;
 
@@ -42,28 +42,25 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String firstName, String lastName, Integer startYear, String course, String studentEmail,  LocalDateTime createdAt) {
+    public Student(Long id, String firstName, String lastName, Integer startYear, String course, String studentEmail) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.startYear = startYear;
         this.course = course;
         this.studentEmail = studentEmail;
-        this.createdAt = createdAt;
     }
 
-    public Student(Long id, String firstName, String lastName, Integer startYear, String course,  String studentEmail, String countryOfBirth, String ethnicity, String gender, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Student(Long id, String firstName, String lastName, Integer startYear, String course, String studentEmail, String country, String ethnicity, String gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.startYear = startYear;
         this.course = course;
         this.studentEmail = studentEmail;
-        this.countryOfBirth = countryOfBirth;
+        this.country = country;
         this.ethnicity = ethnicity;
         this.gender = gender;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public Long getId() {
@@ -115,16 +112,12 @@ public class Student {
         return studentEmail;
     }
 
-    public void setStudentEmail() {
-        this.studentEmail = studentEmail;
+    public String getCountry() {
+        return country;
     }
 
-    public String getCountryOfBirth() {
-        return countryOfBirth;
-    }
-
-    public void setCountryOfBirth(String countryOfBirth) {
-        this.countryOfBirth = countryOfBirth;
+    public void setCountry(String countryOfBirth) {
+        this.country = countryOfBirth;
     }
 
     public String getEthnicity() {
@@ -147,15 +140,7 @@ public class Student {
         return createdAt;
     }
 
-//    public void setCreatedAt(LocalDateTime createdAt) {
-//        this.createdAt = createdAt;
-//    }
-
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

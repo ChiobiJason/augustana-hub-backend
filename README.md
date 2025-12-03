@@ -47,7 +47,7 @@ Example request body:
   "startYear": 2022,
   "course": "Computer Science",
   "studentEmail": "chiobi@ualberta.ca",
-  "countryOfBirth": "Nigeria",
+  "country": "Nigeria",
   "ethnicity": "Igbo",
   "gender": "Male"
 }
@@ -102,7 +102,7 @@ Student {
   start_year       INTEGER NOT NULL
   course           VARCHAR(225) NOT NULL
   student_email    VARCHAR(255) NOT NULL
-  country_of_birth VARCHAR(100)
+  country          VARCHAR(100)
   ethnicity        VARCHAR(100)
   gender           VARCHAR(50)
   created_at       TIMESTAMP
