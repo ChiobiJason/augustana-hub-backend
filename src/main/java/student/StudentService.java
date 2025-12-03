@@ -15,10 +15,6 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List<Student> getAllStudents() {
-        return studentRepository.findAll();
-    }
-
     public Student addStudent(Student newStudent) {
         studentRepository.save(newStudent);
         return newStudent;
@@ -48,10 +44,14 @@ public class StudentService {
         return studentToUpdate;
     }
 
-    public Student getStudentById(Long givenId) {
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
+
+    public List<Student> getStudentById(Long givenId) {
         return studentRepository.findAll().stream()
                 .filter(student -> givenId.equals(student.getId()))
-                .toList().getFirst();
+                .collect(Collectors.toList());
     }
 
     public List<Student> getStudentsByFirstName(String givenFirstName) {
@@ -68,13 +68,13 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public Student getStudentByFullName(String givenFullName) {
+    public List<Student> getStudentByFullName(String givenFullName) {
         return studentRepository.findAll().stream()
                 .filter(student -> student.getFullName() != null &&
                         student.getFullName().toLowerCase().contains(
                                 givenFullName.toLowerCase()
                         ))
-                .toList().getFirst();
+                .collect(Collectors.toList());
     }
 
     public List<Student> getStudentsByStartYear(Integer givenStartYear) {
@@ -93,11 +93,11 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public List<Student> getStudentsByCountryOfBirth(String givenCountryOfBirth) {
+    public List<Student> getStudentsByCountry(String givenCountry) {
         return studentRepository.findAll().stream()
                 .filter(student -> student.getCountry() != null &&
                         student.getCountry().toLowerCase().contains(
-                                givenCountryOfBirth.toLowerCase()
+                                givenCountry.toLowerCase()
                         ))
                 .collect(Collectors.toList());
     }
