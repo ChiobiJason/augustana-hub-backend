@@ -1,4 +1,4 @@
-package student;
+package com.aughub.augustana_hub;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;

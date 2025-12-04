@@ -1,0 +1,197 @@
+###
+GET http://localhost:8080/api/students
+
+###
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Chisom",
+  "lastName": "Chiobi",
+  "startYear": 2022,
+  "course": "Computer Science",
+  "studentEmail": "chiobi@ualberta.ca",
+  "country": "Nigeria",
+  "ethnicity": "Igbo",
+  "gender": "Male"
+}
+
+###
+POST http://localhost:8080/api/students/batch
+Content-Type: application/json
+
+[
+  { "firstName": "Chisom", "lastName": "Okafor", "startYear": 2021, "course": "Computer Science", "studentEmail": "chisom.okafor1@ualberta.ca", "country": "Nigeria", "ethnicity": "Igbo", "gender": "Male" },
+  { "firstName": "Amara", "lastName": "Nwosu", "startYear": 2023, "course": "Biology", "studentEmail": "amara.nwosu2@ualberta.ca", "country": "Nigeria", "ethnicity": "Igbo", "gender": "Female" },
+  { "firstName": "Tunde", "lastName": "Adebayo", "startYear": 2022, "course": "Business", "studentEmail": "tunde.adebayo3@ualberta.ca", "country": "Nigeria", "ethnicity": "Yoruba", "gender": "Male" },
+  { "firstName": "Kemi", "lastName": "Olawale", "startYear": 2020, "course": "Chemistry", "studentEmail": "kemi.olawale4@ualberta.ca", "country": "Nigeria", "ethnicity": "Yoruba", "gender": "Female" },
+  { "firstName": "Ada", "lastName": "Odogwu", "startYear": 2024, "course": "History", "studentEmail": "ada.odogwu5@ualberta.ca", "country": "Nigeria", "ethnicity": "Igbo", "gender": "Female" },
+
+  { "firstName": "Brian", "lastName": "Mwangi", "startYear": 2021, "course": "Computer Science", "studentEmail": "brian.mwangi6@ualberta.ca", "country": "Kenya", "ethnicity": "Kikuyu", "gender": "Male" },
+  { "firstName": "Amina", "lastName": "Hassan", "startYear": 2023, "course": "Nursing", "studentEmail": "amina.hassan7@ualberta.ca", "country": "Kenya", "ethnicity": "Somali-Kenyan", "gender": "Female" },
+  { "firstName": "Kevin", "lastName": "Otieno", "startYear": 2022, "course": "Physics", "studentEmail": "kevin.otieno8@ualberta.ca", "country": "Kenya", "ethnicity": "Luo", "gender": "Male" },
+  { "firstName": "Grace", "lastName": "Wanja", "startYear": 2020, "course": "Mathematics", "studentEmail": "grace.wanja9@ualberta.ca", "country": "Kenya", "ethnicity": "Kikuyu", "gender": "Female" },
+  { "firstName": "Sam", "lastName": "Mutiso", "startYear": 2024, "course": "Engineering", "studentEmail": "sam.mutiso10@ualberta.ca", "country": "Kenya", "ethnicity": "Kamba", "gender": "Male" },
+
+  { "firstName": "Emily", "lastName": "Thompson", "startYear": 2020, "course": "Computer Science", "studentEmail": "emily.thompson11@ualberta.ca", "country": "Canada", "ethnicity": "Caucasian", "gender": "Female" },
+  { "firstName": "Liam", "lastName": "Brown", "startYear": 2023, "course": "Engineering", "studentEmail": "liam.brown12@ualberta.ca", "country": "Canada", "ethnicity": "Caucasian", "gender": "Male" },
+  { "firstName": "Ava", "lastName": "Lacroix", "startYear": 2021, "course": "Biology", "studentEmail": "ava.lacroix13@ualberta.ca", "country": "Canada", "ethnicity": "French-Canadian", "gender": "Female" },
+  { "firstName": "Ethan", "lastName": "Singh", "startYear": 2022, "course": "Mathematics", "studentEmail": "ethan.singh14@ualberta.ca", "country": "Canada", "ethnicity": "South Asian", "gender": "Male" },
+  { "firstName": "Mia", "lastName": "Chen", "startYear": 2024, "course": "Business", "studentEmail": "mia.chen15@ualberta.ca", "country": "Canada", "ethnicity": "Chinese-Canadian", "gender": "Female" },
+
+  { "firstName": "Arjun", "lastName": "Sharma", "startYear": 2023, "course": "Computer Science", "studentEmail": "arjun.sharma16@ualberta.ca", "country": "India", "ethnicity": "Punjabi", "gender": "Male" },
+  { "firstName": "Priya", "lastName": "Patel", "startYear": 2020, "course": "Chemistry", "studentEmail": "priya.patel17@ualberta.ca", "country": "India", "ethnicity": "Gujarati", "gender": "Female" },
+  { "firstName": "Ravi", "lastName": "Menon", "startYear": 2021, "course": "Business", "studentEmail": "ravi.menon18@ualberta.ca", "country": "India", "ethnicity": "Malayali", "gender": "Male" },
+  { "firstName": "Aisha", "lastName": "Khan", "startYear": 2024, "course": "Nursing", "studentEmail": "aisha.khan19@ualberta.ca", "country": "India", "ethnicity": "Hyderabadi", "gender": "Female" },
+  { "firstName": "Kabir", "lastName": "Verma", "startYear": 2022, "course": "Engineering", "studentEmail": "kabir.verma20@ualberta.ca", "country": "India", "ethnicity": "Hindi", "gender": "Male" },
+
+  { "firstName": "Wei", "lastName": "Zhang", "startYear": 2021, "course": "Computer Science", "studentEmail": "wei.zhang21@ualberta.ca", "country": "China", "ethnicity": "Han", "gender": "Male" },
+  { "firstName": "Ling", "lastName": "Xu", "startYear": 2024, "course": "Biology", "studentEmail": "ling.xu22@ualberta.ca", "country": "China", "ethnicity": "Han", "gender": "Female" },
+  { "firstName": "Chen", "lastName": "Li", "startYear": 2023, "course": "Engineering", "studentEmail": "chen.li23@ualberta.ca", "country": "China", "ethnicity": "Han", "gender": "Male" },
+  { "firstName": "Yuna", "lastName": "Huang", "startYear": 2020, "course": "Mathematics", "studentEmail": "yuna.huang24@ualberta.ca", "country": "China", "ethnicity": "Han", "gender": "Female" },
+  { "firstName": "Bo", "lastName": "Wang", "startYear": 2022, "course": "Chemistry", "studentEmail": "bo.wang25@ualberta.ca", "country": "China", "ethnicity": "Han", "gender": "Male" },
+
+  { "firstName": "Mateo", "lastName": "Gonzalez", "startYear": 2021, "course": "Business", "studentEmail": "mateo.gonzalez26@ualberta.ca", "country": "Mexico", "ethnicity": "Latino", "gender": "Male" },
+  { "firstName": "Sofia", "lastName": "Ramirez", "startYear": 2023, "course": "Chemistry", "studentEmail": "sofia.ramirez27@ualberta.ca", "country": "Mexico", "ethnicity": "Latina", "gender": "Female" },
+  { "firstName": "Diego", "lastName": "Lopez", "startYear": 2020, "course": "Computer Science", "studentEmail": "diego.lopez28@ualberta.ca", "country": "Mexico", "ethnicity": "Latino", "gender": "Male" },
+  { "firstName": "Valeria", "lastName": "Martinez", "startYear": 2024, "course": "Psychology", "studentEmail": "valeria.martinez29@ualberta.ca", "country": "Mexico", "ethnicity": "Latina", "gender": "Female" },
+  { "firstName": "Carlos", "lastName": "Hernandez", "startYear": 2022, "course": "Physics", "studentEmail": "carlos.hernandez30@ualberta.ca", "country": "Mexico", "ethnicity": "Latino", "gender": "Male" },
+
+  { "firstName": "Lucas", "lastName": "Silva", "startYear": 2023, "course": "Engineering", "studentEmail": "lucas.silva31@ualberta.ca", "country": "Brazil", "ethnicity": "Brazilian", "gender": "Male" },
+  { "firstName": "Isabella", "lastName": "Souza", "startYear": 2024, "course": "Biology", "studentEmail": "isabella.souza32@ualberta.ca", "country": "Brazil", "ethnicity": "Brazilian", "gender": "Female" },
+  { "firstName": "Rafael", "lastName": "Costa", "startYear": 2021, "course": "Business", "studentEmail": "rafael.costa33@ualberta.ca", "country": "Brazil", "ethnicity": "Brazilian", "gender": "Male" },
+  { "firstName": "Lara", "lastName": "Oliveira", "startYear": 2020, "course": "Mathematics", "studentEmail": "lara.oliveira34@ualberta.ca", "country": "Brazil", "ethnicity": "Brazilian", "gender": "Female" },
+  { "firstName": "Miguel", "lastName": "Almeida", "startYear": 2022, "course": "Physics", "studentEmail": "miguel.almeida35@ualberta.ca", "country": "Brazil", "ethnicity": "Brazilian", "gender": "Male" },
+
+  { "firstName": "Yuki", "lastName": "Tanaka", "startYear": 2024, "course": "Computer Science", "studentEmail": "yuki.tanaka36@ualberta.ca", "country": "Japan", "ethnicity": "Japanese", "gender": "Female" },
+  { "firstName": "Haruto", "lastName": "Sato", "startYear": 2021, "course": "Engineering", "studentEmail": "haruto.sato37@ualberta.ca", "country": "Japan", "ethnicity": "Japanese", "gender": "Male" },
+  { "firstName": "Aoi", "lastName": "Yamada", "startYear": 2023, "course": "Biology", "studentEmail": "aoi.yamada38@ualberta.ca", "country": "Japan", "ethnicity": "Japanese", "gender": "Female" },
+  { "firstName": "Ren", "lastName": "Kobayashi", "startYear": 2020, "course": "Psychology", "studentEmail": "ren.kobayashi39@ualberta.ca", "country": "Japan", "ethnicity": "Japanese", "gender": "Male" },
+  { "firstName": "Sakura", "lastName": "Ito", "startYear": 2022, "course": "Business", "studentEmail": "sakura.ito40@ualberta.ca", "country": "Japan", "ethnicity": "Japanese", "gender": "Female" },
+
+  { "firstName": "Mohammed", "lastName": "Al-Sayed", "startYear": 2023, "course": "Engineering", "studentEmail": "mohammed.alsayed41@ualberta.ca", "country": "Egypt", "ethnicity": "Arab", "gender": "Male" },
+  { "firstName": "Sara", "lastName": "Mahmoud", "startYear": 2024, "course": "Medicine", "studentEmail": "sara.mahmoud42@ualberta.ca", "country": "Egypt", "ethnicity": "Arab", "gender": "Female" },
+  { "firstName": "Omar", "lastName": "Hassan", "startYear": 2022, "course": "Physics", "studentEmail": "omar.hassan43@ualberta.ca", "country": "Egypt", "ethnicity": "Arab", "gender": "Male" },
+  { "firstName": "Nour", "lastName": "Youssef", "startYear": 2021, "course": "Biology", "studentEmail": "nour.youssef44@ualberta.ca", "country": "Egypt", "ethnicity": "Arab", "gender": "Female" },
+  { "firstName": "Khaled", "lastName": "Salem", "startYear": 2020, "course": "Computer Science", "studentEmail": "khaled.salem45@ualberta.ca", "country": "Egypt", "ethnicity": "Arab", "gender": "Male" },
+
+  { "firstName": "John", "lastName": "Smith", "startYear": 2020, "course": "Computer Science", "studentEmail": "john.smith46@ualberta.ca", "country": "USA", "ethnicity": "Caucasian", "gender": "Male" },
+  { "firstName": "Emily", "lastName": "Davis", "startYear": 2021, "course": "Nursing", "studentEmail": "emily.davis47@ualberta.ca", "country": "USA", "ethnicity": "Caucasian", "gender": "Female" },
+  { "firstName": "Michael", "lastName": "Johnson", "startYear": 2023, "course": "Engineering", "studentEmail": "michael.johnson48@ualberta.ca", "country": "USA", "ethnicity": "African American", "gender": "Male" },
+  { "firstName": "Ashley", "lastName": "Williams", "startYear": 2022, "course": "Psychology", "studentEmail": "ashley.williams49@ualberta.ca", "country": "USA", "ethnicity": "Caucasian", "gender": "Female" },
+  { "firstName": "David", "lastName": "Lee", "startYear": 2024, "course": "Computer Science", "studentEmail": "david.lee50@ualberta.ca", "country": "USA", "ethnicity": "Asian-American", "gender": "Male" },
+
+  { "firstName": "Kwame", "lastName": "Mensah", "startYear": 2020, "course": "Economics", "studentEmail": "kwame.mensah51@ualberta.ca", "country": "Ghana", "ethnicity": "Akan", "gender": "Male" },
+  { "firstName": "Akosua", "lastName": "Boatemaa", "startYear": 2024, "course": "Biology", "studentEmail": "akosua.boatemaa52@ualberta.ca", "country": "Ghana", "ethnicity": "Akan", "gender": "Female" },
+  { "firstName": "Kojo", "lastName": "Adjei", "startYear": 2023, "course": "Computer Science", "studentEmail": "kojo.adjei53@ualberta.ca", "country": "Ghana", "ethnicity": "Akan", "gender": "Male" },
+  { "firstName": "Abena", "lastName": "Owusu", "startYear": 2022, "course": "Business", "studentEmail": "abena.owusu54@ualberta.ca", "country": "Ghana", "ethnicity": "Akan", "gender": "Female" },
+  { "firstName": "Yaw", "lastName": "Kwarteng", "startYear": 2021, "course": "Physics", "studentEmail": "yaw.kwarteng55@ualberta.ca", "country": "Ghana", "ethnicity": "Akan", "gender": "Male" },
+
+  { "firstName": "Maria", "lastName": "Lopez", "startYear": 2022, "course": "Business", "studentEmail": "maria.lopez56@ualberta.ca", "country": "Colombia", "ethnicity": "Latina", "gender": "Female" },
+  { "firstName": "Juan", "lastName": "Santos", "startYear": 2023, "course": "Engineering", "studentEmail": "juan.santos57@ualberta.ca", "country": "Colombia", "ethnicity": "Latino", "gender": "Male" },
+  { "firstName": "Camila", "lastName": "Rojas", "startYear": 2021, "course": "Biology", "studentEmail": "camila.rojas58@ualberta.ca", "country": "Colombia", "ethnicity": "Latina", "gender": "Female" },
+  { "firstName": "Luis", "lastName": "Morales", "startYear": 2020, "course": "Physics", "studentEmail": "luis.morales59@ualberta.ca", "country": "Colombia", "ethnicity": "Latino", "gender": "Male" },
+  { "firstName": "Daniela", "lastName": "Garcia", "startYear": 2024, "course": "Psychology", "studentEmail": "daniela.garcia60@ualberta.ca", "country": "Colombia", "ethnicity": "Latina", "gender": "Female" },
+
+  { "firstName": "Nadia", "lastName": "Haddad", "startYear": 2021, "course": "Computer Science", "studentEmail": "nadia.haddad61@ualberta.ca", "country": "Lebanon", "ethnicity": "Arab", "gender": "Female" },
+  { "firstName": "Rami", "lastName": "Khalil", "startYear": 2023, "course": "Engineering", "studentEmail": "rami.khalil62@ualberta.ca", "country": "Lebanon", "ethnicity": "Arab", "gender": "Male" },
+  { "firstName": "Layla", "lastName": "Saad", "startYear": 2024, "course": "Mathematics", "studentEmail": "layla.saad63@ualberta.ca", "country": "Lebanon", "ethnicity": "Arab", "gender": "Female" },
+  { "firstName": "Omar", "lastName": "Darwish", "startYear": 2022, "course": "Physics", "studentEmail": "omar.darwish64@ualberta.ca", "country": "Lebanon", "ethnicity": "Arab", "gender": "Male" },
+  { "firstName": "Jana", "lastName": "Nassar", "startYear": 2020, "course": "Biology", "studentEmail": "jana.nassar65@ualberta.ca", "country": "Lebanon", "ethnicity": "Arab", "gender": "Female" },
+
+  { "firstName": "Pierre", "lastName": "Dubois", "startYear": 2023, "course": "French Studies", "studentEmail": "pierre.dubois66@ualberta.ca", "country": "France", "ethnicity": "French", "gender": "Male" },
+  { "firstName": "Sophie", "lastName": "Laurent", "startYear": 2021, "course": "Engineering", "studentEmail": "sophie.laurent67@ualberta.ca", "country": "France", "ethnicity": "French", "gender": "Female" },
+  { "firstName": "Luc", "lastName": "Moreau", "startYear": 2022, "course": "History", "studentEmail": "luc.moreau68@ualberta.ca", "country": "France", "ethnicity": "French", "gender": "Male" },
+  { "firstName": "Claire", "lastName": "Bernard", "startYear": 2020, "course": "Biology", "studentEmail": "claire.bernard69@ualberta.ca", "country": "France", "ethnicity": "French", "gender": "Female" },
+  { "firstName": "Antoine", "lastName": "Girard", "startYear": 2024, "course": "Physics", "studentEmail": "antoine.girard70@ualberta.ca", "country": "France", "ethnicity": "French", "gender": "Male" },
+
+  { "firstName": "Ahmed", "lastName": "Abdullah", "startYear": 2021, "course": "Computer Science", "studentEmail": "ahmed.abdullah71@ualberta.ca", "country": "Pakistan", "ethnicity": "Punjabi", "gender": "Male" },
+  { "firstName": "Fatima", "lastName": "Iqbal", "startYear": 2023, "course": "Nursing", "studentEmail": "fatima.iqbal72@ualberta.ca", "country": "Pakistan", "ethnicity": "Punjabi", "gender": "Female" },
+  { "firstName": "Bilal", "lastName": "Hussain", "startYear": 2024, "course": "Engineering", "studentEmail": "bilal.hussain73@ualberta.ca", "country": "Pakistan", "ethnicity": "Pashtun", "gender": "Male" },
+  { "firstName": "Zara", "lastName": "Sheikh", "startYear": 2020, "course": "Business", "studentEmail": "zara.sheikh74@ualberta.ca", "country": "Pakistan", "ethnicity": "Urdu", "gender": "Female" },
+  { "firstName": "Usman", "lastName": "Malik", "startYear": 2022, "course": "Chemistry", "studentEmail": "usman.malik75@ualberta.ca", "country": "Pakistan", "ethnicity": "Punjabi", "gender": "Male" },
+
+  { "firstName": "Thiago", "lastName": "Ferreira", "startYear": 2022, "course": "Engineering", "studentEmail": "thiago.ferreira76@ualberta.ca", "country": "Portugal", "ethnicity": "Portuguese", "gender": "Male" },
+  { "firstName": "Ines", "lastName": "Santos", "startYear": 2023, "course": "Biology", "studentEmail": "ines.santos77@ualberta.ca", "country": "Portugal", "ethnicity": "Portuguese", "gender": "Female" },
+  { "firstName": "Jorge", "lastName": "Pereira", "startYear": 2020, "course": "History", "studentEmail": "jorge.pereira78@ualberta.ca", "country": "Portugal", "ethnicity": "Portuguese", "gender": "Male" },
+  { "firstName": "Mariana", "lastName": "Costa", "startYear": 2024, "course": "Chemistry", "studentEmail": "mariana.costa79@ualberta.ca", "country": "Portugal", "ethnicity": "Portuguese", "gender": "Female" },
+  { "firstName": "Rodrigo", "lastName": "Ramos", "startYear": 2021, "course": "Physics", "studentEmail": "rodrigo.ramos80@ualberta.ca", "country": "Portugal", "ethnicity": "Portuguese", "gender": "Male" },
+
+  { "firstName": "Nia", "lastName": "Jackson", "startYear": 2023, "course": "Computer Science", "studentEmail": "nia.jackson81@ualberta.ca", "country": "Jamaica", "ethnicity": "Afro-Caribbean", "gender": "Female" },
+  { "firstName": "Darius", "lastName": "Brown", "startYear": 2020, "course": "Business", "studentEmail": "darius.brown82@ualberta.ca", "country": "Jamaica", "ethnicity": "Afro-Caribbean", "gender": "Male" },
+  { "firstName": "Shania", "lastName": "Holness", "startYear": 2021, "course": "Nursing", "studentEmail": "shania.holness83@ualberta.ca", "country": "Jamaica", "ethnicity": "Afro-Caribbean", "gender": "Female" },
+  { "firstName": "Andre", "lastName": "Morgan", "startYear": 2024, "course": "Mathematics", "studentEmail": "andre.morgan84@ualberta.ca", "country": "Jamaica", "ethnicity": "Afro-Caribbean", "gender": "Male" },
+  { "firstName": "Tiana", "lastName": "Hall", "startYear": 2022, "course": "Psychology", "studentEmail": "tiana.hall85@ualberta.ca", "country": "Jamaica", "ethnicity": "Afro-Caribbean", "gender": "Female" },
+
+  { "firstName": "Sven", "lastName": "Larsson", "startYear": 2020, "course": "Engineering", "studentEmail": "sven.larsson86@ualberta.ca", "country": "Sweden", "ethnicity": "Scandinavian", "gender": "Male" },
+  { "firstName": "Elsa", "lastName": "Johansson", "startYear": 2024, "course": "Biology", "studentEmail": "elsa.johansson87@ualberta.ca", "country": "Sweden", "ethnicity": "Scandinavian", "gender": "Female" },
+  { "firstName": "Oskar", "lastName": "Berg", "startYear": 2022, "course": "Physics", "studentEmail": "oskar.berg88@ualberta.ca", "country": "Sweden", "ethnicity": "Scandinavian", "gender": "Male" },
+  { "firstName": "Anna", "lastName": "Lindberg", "startYear": 2023, "course": "Business", "studentEmail": "anna.lindberg89@ualberta.ca", "country": "Sweden", "ethnicity": "Scandinavian", "gender": "Female" },
+  { "firstName": "Viktor", "lastName": "Nilsson", "startYear": 2021, "course": "Computer Science", "studentEmail": "viktor.nilsson90@ualberta.ca", "country": "Sweden", "ethnicity": "Scandinavian", "gender": "Male" },
+
+  { "firstName": "Ava", "lastName": "White", "startYear": 2023, "course": "Psychology", "studentEmail": "ava.white91@ualberta.ca", "country": "UK", "ethnicity": "British", "gender": "Female" },
+  { "firstName": "Oliver", "lastName": "King", "startYear": 2024, "course": "Engineering", "studentEmail": "oliver.king92@ualberta.ca", "country": "UK", "ethnicity": "British", "gender": "Male" },
+  { "firstName": "Grace", "lastName": "Walker", "startYear": 2020, "course": "Computer Science", "studentEmail": "grace.walker93@ualberta.ca", "country": "UK", "ethnicity": "British", "gender": "Female" },
+  { "firstName": "Harry", "lastName": "Edwards", "startYear": 2021, "course": "Economics", "studentEmail": "harry.edwards94@ualberta.ca", "country": "UK", "ethnicity": "British", "gender": "Male" },
+  { "firstName": "Chloe", "lastName": "Lewis", "startYear": 2022, "course": "Biology", "studentEmail": "chloe.lewis95@ualberta.ca", "country": "UK", "ethnicity": "British", "gender": "Female" },
+
+  { "firstName": "Zanele", "lastName": "Moyo", "startYear": 2021, "course": "Chemistry", "studentEmail": "zanele.moyo96@ualberta.ca", "country": "South Africa", "ethnicity": "Zulu", "gender": "Female" },
+  { "firstName": "Thabo", "lastName": "Dlamini", "startYear": 2023, "course": "Engineering", "studentEmail": "thabo.dlamini97@ualberta.ca", "country": "South Africa", "ethnicity": "Sotho", "gender": "Male" },
+  { "firstName": "Naledi", "lastName": "Khumalo", "startYear": 2024, "course": "Biology", "studentEmail": "naledi.khumalo98@ualberta.ca", "country": "South Africa", "ethnicity": "Ndebele", "gender": "Female" },
+  { "firstName": "Sibusiso", "lastName": "Mbatha", "startYear": 2022, "course": "Computer Science", "studentEmail": "sibusiso.mbatha99@ualberta.ca", "country": "South Africa", "ethnicity": "Zulu", "gender": "Male" },
+  { "firstName": "Nandi", "lastName": "Zwane", "startYear": 2020, "course": "Business", "studentEmail": "nandi.zwane100@ualberta.ca", "country": "South Africa", "ethnicity": "Zulu", "gender": "Female" }
+]
+
+###
+GET http://localhost:8080/api/students?id=1
+
+
+###
+PUT http://localhost:8080/api/students/1
+Content-Type: application/json
+
+{
+  "firstName": "Chisom",
+  "lastName": "Chiobi",
+  "startYear": 2022,
+  "course": "Mathematics",
+  "studentEmail": "chiobi@ualberta.ca",
+  "country": "Nigeria",
+  "ethnicity": "Igbo",
+  "gender": "Male"
+}
+
+###
+PUT http://localhost:8080/api/students/by-email/chiobi@ualberta.ca
+Content-Type: application/json
+
+{
+  "firstName": "Chisom",
+  "lastName": "Chiobi",
+  "startYear": 2022,
+  "course": "Computer Science",
+  "studentEmail": "chiobi@ualberta.ca",
+  "country": "Nigeria",
+  "ethnicity": "Igbo",
+  "gender": "Male"
+}
+
+###
+POST http://localhost:8080/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Jason",
+  "lastName": "Lopez",
+  "startYear": 2025,
+  "course": "Psychology",
+  "studentEmail": "jlopez@ualberta.ca",
+  "country": "Mexico",
+  "gender": "Male"
+}
+
+###
+DELETE http://localhost:8080/api/students/102
+
+###
+DELETE http://localhost:8080/api/students/by-email/jlopez@ualberta.ca

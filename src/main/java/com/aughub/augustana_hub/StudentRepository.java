@@ -1,4 +1,4 @@
-package student;
+package com.aughub.augustana_hub;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,5 +10,4 @@ public interface StudentRepository extends JpaRepository <Student, Long>{
     void deleteByStudentEmailIgnoreCase(String studentEmail);
 
     Optional<Student> findByStudentEmailIgnoreCase(String studentEmail);
-
 }

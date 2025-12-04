@@ -6,5 +6,8 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop # Drops + recreates on startup AND drops on shutdown
+
+#      Early Production/Testing
+#      ddl-auto: create-drop # Attempts to alter tables without deleting data
     show-sql: true

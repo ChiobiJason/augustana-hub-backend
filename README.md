@@ -10,10 +10,16 @@ This is **Version 1**, focused on core CRUD operations and filtering — no auth
 - Register student profiles
 - List all students
 - Filter by:
-    - Year of Study
+    - Id
+    - First Name
+    - Last Name
+    - First & Last Name
+    - Start Year
+    - Course
     - Ethnicity
-    - Country of Birth
-- Optional profile fields (gender, profile image)
+    - Country
+    - Gender
+- Optional profile fields (gender, ethnicity, country)
 - Clean JSON responses
 - Proper validation and error handling
 - PostgreSQL integration
@@ -23,8 +29,8 @@ This is **Version 1**, focused on core CRUD operations and filtering — no auth
 
 ## 🧱 Tech Stack
 
-- **Java 17+**
-- **Spring Boot 3.x**
+- **Java 21**
+- **Spring Boot 3.4.12**
     - Web
     - Data JPA
     - Validation
@@ -62,14 +68,35 @@ Returns: `201 Created`
 
 Query params:
 ```
-?year=3
-?countryOfBirth=Nigeria
+?id=1
+?firstName=Chisom
+?lastName=Chiobi
+?firstName=Chisom&lastName=Chiobi
+?startYear=2022
+?course=Computer Science
+?country=Nigeria
 ?ethnicity=Igbo
+?gender=Male
 ```
 
-Example:
+Examples:
 ```
-/api/students?year=3&ethnicity=Igbo
+/api/students?firstName=Chisom&lastName=Chiobi
+```
+```
+/api/students?course=Computer Science
+```
+```
+/api/students?startYear=2022
+```
+```
+/api/students?country=Nigeria
+```
+```
+/api/students?gender=Male
+```
+```
+No param: Gets all students
 ```
 
 Returns: JSON array of students.
@@ -78,17 +105,98 @@ Returns: JSON array of students.
 
 ### 3. Get Student by ID
 **GET** `/api/students/{id}`
+```
+/api/students/1
+```
+``` json
+[
+    { 
+        "id": 1,
+        "firstName": "Chisom",
+        "lastName": "Chiobi",
+        "startYear": 2022,
+        "course": "Computer Science",
+        "studentEmail": "chiobi@ualberta.ca",
+        "country": "Nigeria",
+        "ethnicity": "Igbo",
+        "gender": "Male",
+        "createdAt": "2025-12-03T18:21:03.286208",
+        "updatedAt": "2025-12-03T18:21:03.286388",
+        "fullName": "Chisom Chiobi"
+    }
+]
+```
+Returns: JSON array of students (Due to id being unique only one student in array).
 
 ---
 
-### 4. Update Student (Optional for V1)
+### 4. Update Student By Id
 **PUT** `/api/students/{id}`
+```http request
+###
+PUT http://localhost:8080/api/students/1
+Content-Type: application/json
+
+{
+  "firstName": "Chisom",
+  "lastName": "Chiobi",
+  "startYear": 2022,
+  "course": "Mathematics",
+  "studentEmail": "chiobi@ualberta.ca",
+  "country": "Nigeria",
+  "ethnicity": "Igbo",
+  "gender": "Male"
+}
+```
+```
+Response code: 200;
+```
 
 ---
 
-### 5. Delete Student (Optional for V1)
-**DELETE** `/api/students/{id}`
+### 5. Update Student By Student Email
+**PUT** `/api/students/by-email/{studentEmail}`
+```http request
+###
+PUT http://localhost:8080/api/students/by-email/chiobi@ualberta.ca
+Content-Type: application/json
 
+{
+  "firstName": "Chisom",
+  "lastName": "Chiobi",
+  "startYear": 2022,
+  "course": "Computer Science",
+  "studentEmail": "chiobi@ualberta.ca",
+  "country": "Nigeria",
+  "ethnicity": "Igbo",
+  "gender": "Male"
+}
+```
+```
+Response code: 200;
+```
+
+---
+
+### 6. Delete Student By Id
+**DELETE** `/api/students/{id}`
+```http request
+###
+DELETE http://localhost:8080/api/students/1
+```
+```
+Student successfully deleted!
+```
+
+### 7. Delete Student By Student Email
+**DELETE** `/api/students/by-email/{studentEmail}`
+```http request
+###
+DELETE http://localhost:8080/api/students/by-email/chiobi@ualberta.ca
+```
+```
+Student successfully deleted!
+```
 
 ---
 
@@ -165,7 +273,8 @@ MIT — free to use and modify.
 ---
 
 ## 👤 Author
-**Chisom (Jason) Chiobi**
-Augustana Campus, University of Alberta  
-Full‑stack developer in training  
+### Chisom (Jason) Chiobi
+- Full‑stack developer
+- Augustana Campus, University of Alberta  
+
 

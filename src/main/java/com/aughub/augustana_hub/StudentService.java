@@ -1,4 +1,4 @@
-package student;
+package com.aughub.augustana_hub;
 
 
 import jakarta.transaction.Transactional;
@@ -20,16 +20,47 @@ public class StudentService {
         return newStudent;
     }
 
+    public List<Student> addBatchOfStudents(List<Student> students) {
+        studentRepository.saveAll(students);
+        return students;
+    }
+
     @Transactional
-    public void deleteStudent(String givenStudentEmail) {
+    public void deleteStudentByStudentEmail(String givenStudentEmail) {
         studentRepository.deleteByStudentEmailIgnoreCase(givenStudentEmail);
     }
 
-    public Student updateStudent(Student updatedStudent) {
+    public void deleteStudentById(Long studentId) {
+        studentRepository.deleteById(studentId);
+    }
+
+    public Student updateStudentByStudentEmail(String givenStudentEmail, Student updatedStudent) {
         Student studentToUpdate = studentRepository.findByStudentEmailIgnoreCase(
-                updatedStudent.getStudentEmail())
+                        givenStudentEmail.toLowerCase())
                 .orElseThrow(() -> new RuntimeException(
                         "Student not found with email: " + updatedStudent.getStudentEmail()));
+
+        studentToUpdate.setFirstName(updatedStudent.getFirstName());
+        studentToUpdate.setLastName(updatedStudent.getLastName());
+        studentToUpdate.setStartYear((updatedStudent.getStartYear()));
+        studentToUpdate.setCourse((updatedStudent.getCourse()));
+        studentToUpdate.setCountry(updatedStudent.getCountry());
+        studentToUpdate.setEthnicity(updatedStudent.getEthnicity());
+        studentToUpdate.setGender(updatedStudent.getGender());
+
+        studentRepository.save(studentToUpdate);
+
+        return studentToUpdate;
+    }
+
+    public Student updateStudentById(Long id, Student updatedStudent) {
+        Student studentToUpdate = studentRepository.findById(id).orElse(null);
+//                .orElseThrow(() -> new RuntimeException(
+//                        "Student not found with id: " + id));
+
+        if (studentToUpdate == null) {
+            return null;
+        }
 
         studentToUpdate.setFirstName(updatedStudent.getFirstName());
         studentToUpdate.setLastName(updatedStudent.getLastName());
